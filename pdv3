@@ -1,0 +1,50 @@
+# Programa: pdv.py
+# Autor: Guilherme da Silva Sousa
+# Data: 23/02/2026
+# Versão 2.0
+# Objetivo: Simular o funcionamento de um PDV(Ponto de Vendas)/CAIXA
+
+
+produto = input("Nome do produto: ")
+preco = float(input("Preço unitário (ex:9.90): "))
+quantidade = int(input("Quantidade: "))
+
+print("Produto", produto)
+print("Preço:", preco)
+print("Quantidade:", quantidade)
+
+subtotal = preco * quantidade
+print("Subtotal: R$: ", subtotal)
+
+desconto = 0.0
+
+if subtotal >= 100:
+    desconto = subtotal * 0.10
+else:
+    desconto = 0.0
+
+total = subtotal - desconto
+
+print("Desconto: R$: " , desconto)
+print("Total: R$: ", total)
+
+if preco <= 0 or qtd <= 0:
+    print("Erro: preço e quantidade devem ser maiores que zero.")
+else:
+    subtotal = preco * qtd
+
+if subtotal>= 100:
+    #Aqui entra o aninhado: dentro do bloco do ">= 100
+    if subtotal >= 200:
+        desconto = subtotal * 0.15
+    else:
+        desconto = 0.0
+
+    total = subtotal - desconto
+
+    print("\n=== RESUMO ===")
+    print("Produto: ", produto)
+    print("Subtotal: R$: ". subtotal)
+    print("Desconto: R%: ", desconto)
+    print("Total: R$: ", total)
+    
